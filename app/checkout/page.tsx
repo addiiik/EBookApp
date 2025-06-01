@@ -98,7 +98,7 @@ export default async function CheckoutPage() {
                       <p className="text-xs text-muted-foreground mt-1">
                         by {item.book.author} • {item.book.category}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-1">Digital Download</p>
+                      <p className="text-xs text-muted-foreground mt-1">Digital</p>
                     </div>
                     <div className="text-right flex-shrink-0">
                       {hasDiscount ? (
@@ -192,7 +192,7 @@ export default async function CheckoutPage() {
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4 text-sm">
               <p className="text-blue-800">
-                <strong>Digital Delivery:</strong> Your ebooks will be available for download immediately after purchase.
+                <strong>Digital Delivery:</strong> Your ebooks will be available for reading immediately after purchase.
               </p>
             </div>
 

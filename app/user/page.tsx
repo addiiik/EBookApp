@@ -129,7 +129,7 @@ export default async function UserPage() {
               <Library className="w-8 h-8 mb-3 text-primary" />
               <h3 className="text-lg font-semibold mb-2">Browse Your Library</h3>
               <p className="text-muted-foreground mb-4">
-                Access all your purchased books and download them anytime.
+                Access all your purchased books and read them anytime.
               </p>
               <Link href="/library">
                 <Button>Open Library</Button>

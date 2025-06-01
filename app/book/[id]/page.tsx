@@ -145,7 +145,7 @@ export default async function BookPage({ params }: { params: { id: string } }) {
                     <span className="font-medium text-green-800">Book Owned</span>
                   </div>
                   <p className="text-sm text-green-700">
-                    This book is in your library. You can download it anytime.
+                    This book is in your library. You can read it anytime.
                   </p>
                 </div>
                 <div className="flex gap-3">

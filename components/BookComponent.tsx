@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Star, CheckCircle, Download, Calendar, BookOpen } from 'lucide-react';
+import { Star, CheckCircle, Calendar, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import WishlistButton from '@/components/buttons/WishlistButton';
 import CartButton from '@/components/buttons/CartButton';
@@ -22,7 +22,6 @@ interface BookComponentProps {
   inLibrary?: boolean;
   purchasedAt?: Date;
   isPurchased?: boolean;
-  isDownloaded?: boolean;
 }
 
 function formatPurchaseDate(date: Date) {
@@ -39,7 +38,6 @@ export default function BookComponent({
   inLibrary = false,
   purchasedAt,
   isPurchased = false,
-  isDownloaded = false
 }: BookComponentProps) {
   const bookIsPurchased = inLibrary || isPurchased;
   
@@ -54,11 +52,6 @@ export default function BookComponent({
             {bookIsPurchased && (
               <div className="absolute inset-0 bg-green-500/10 rounded-lg flex items-center justify-center">
                 <CheckCircle className="w-12 h-12 text-green-600" />
-              </div>
-            )}
-            {isDownloaded && (
-              <div className="absolute top-2 right-2 bg-blue-500 text-white rounded-full p-1">
-                <Download className="w-3 h-3" />
               </div>
             )}
           </div>
@@ -137,14 +130,6 @@ export default function BookComponent({
               <div className="flex items-center justify-center text-sm text-muted-foreground bg-muted/30 rounded-lg py-2 px-3">
                 <Calendar className="w-4 h-4 mr-2" />
                 Purchased {formatPurchaseDate(purchasedAt)}
-              </div>
-            )}
-            
-            {isDownloaded && (
-              <div className="text-center">
-                <Badge variant="outline" className="text-blue-600 border-blue-600 text-xs">
-                  Downloaded for Offline Reading
-                </Badge>
               </div>
             )}
             

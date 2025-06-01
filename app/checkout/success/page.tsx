@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { redirect } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Download, Library, ShoppingBag } from 'lucide-react';
+import { CheckCircle, Library, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 
 interface CheckoutSuccessPageProps {
@@ -78,10 +78,6 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
                     <p className="text-xs text-muted-foreground mt-1">
                       by {book.author} • {book.category}
                     </p>
-                    <div className="flex items-center mt-2">
-                      <Download className="h-3 w-3 text-green-500 mr-1" />
-                      <span className="text-xs text-green-600 font-medium">Ready for download</span>
-                    </div>
                   </div>
                   <div className="text-right flex-shrink-0">
                     {hasDiscount ? (
@@ -110,11 +106,10 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
 
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
           <div className="flex items-start space-x-3">
-            <Download className="h-5 w-5 text-blue-600 mt-0.5" />
             <div>
               <h3 className="font-semibold text-blue-800 mb-1">Digital Delivery</h3>
               <p className="text-sm text-blue-700">
-                Your ebooks are now available for immediate download in your library. 
+                Your ebooks are now available in your library. 
                 You can access them anytime from any device.
               </p>
             </div>
