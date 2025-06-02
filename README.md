@@ -13,7 +13,7 @@ A digital store and library for your academic textbooks.
 </div>
 
 <div style="display: flex; gap: 10px;">
-  <img src="public/screenshots/Home-Mobile.PNG.png" alt="HomeMobile" width="300"/>
+  <img src="public/screenshots/Home-Mobile.PNG" alt="HomeMobile" width="300"/>
   <img src="public/screenshots/User-Mobile.PNG" alt="UserMobile" width="300"/>
 </div>
 
@@ -24,8 +24,8 @@ A digital store and library for your academic textbooks.
 </div>
 
 <div style="display: flex; gap: 10px;">
-  <img src="public/screenshots/Book-Mobile.png" alt="BookMobile" width="300"/>
-  <img src="public/screenshots/Reader-Mobile.png" alt="ReaderMobile" width="300"/>
+  <img src="public/screenshots/Book-Mobile.PNG" alt="BookMobile" width="300"/>
+  <img src="public/screenshots/Reader-Mobile.PNG" alt="ReaderMobile" width="300"/>
 </div>
 
 ---
