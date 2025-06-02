@@ -92,10 +92,10 @@ export default async function CheckoutPage() {
                 const hasDiscount = item.book.discountedPrice !== null;
                 
                 return (
-                  <div key={item.id} className="flex justify-between items-start py-3 border-b last:border-b-0">
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-sm truncate pr-4">{item.book.title}</h3>
-                      <p className="text-xs text-muted-foreground mt-1">
+                  <div key={item.id} className="flex justify-between items-start py-3 border-b last:border-b-0 gap-4">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-sm truncate">{item.book.title}</h3>
+                      <p className="text-xs text-muted-foreground mt-1 truncate">
                         by {item.book.author} • {item.book.category}
                       </p>
                       <p className="text-xs text-muted-foreground mt-1">Digital</p>

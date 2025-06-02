@@ -3,17 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
-import { auth, signIn } from '@/auth';
+import { signIn } from '@/auth';
 import { signupUser } from '@/lib/auth/AuthSignup';
 import { redirect } from 'next/navigation';
 
 export default async function SignupPage() {
-  const session = await auth();
-  
-  if (session?.user?.id) {
-    redirect(`/`);
-  }
-
   async function handleSignup(formData: FormData) {
     'use server';
 
@@ -31,7 +25,7 @@ export default async function SignupPage() {
       await signIn('credentials', {
         email,
         password,
-        redirectTo: '/',
+        redirect: false
       });
     } catch (error) {
       redirect('/auth/signin')

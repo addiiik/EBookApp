@@ -8,14 +8,24 @@ A digital store and library for your academic textbooks.
 
 ### 🏠 Store landing screen and user page
 <div style="display: flex; gap: 10px;">
-  <img src="public/screenshots/Home.png" alt="Book" width="300"/>
-  <img src="public/screenshots/User.png" alt="Reader" width="300"/>
+  <img src="public/screenshots/Home.png" alt="Home" width="300"/>
+  <img src="public/screenshots/User.png" alt="User" width="300"/>
+</div>
+
+<div style="display: flex; gap: 10px;">
+  <img src="public/screenshots/Home-Mobile.PNG.png" alt="HomeMobile" width="300"/>
+  <img src="public/screenshots/User-Mobile.PNG" alt="UserMobile" width="300"/>
 </div>
 
 ### 📚 Book page and reader
 <div style="display: flex; gap: 10px;">
   <img src="public/screenshots/Book.png" alt="Book" width="300"/>
   <img src="public/screenshots/Reader.png" alt="Reader" width="300"/>
+</div>
+
+<div style="display: flex; gap: 10px;">
+  <img src="public/screenshots/Book-Mobile.png" alt="BookMobile" width="300"/>
+  <img src="public/screenshots/Reader-Mobile.png" alt="ReaderMobile" width="300"/>
 </div>
 
 ---
@@ -72,8 +82,6 @@ Open **another terminal tab** and run:
 
 ```bash
 docker-compose up
-npx prisma generate
-npx prisma migrate dev --name init
 ```
 
 💡 Make sure Docker is running on your machine.
@@ -85,6 +93,8 @@ npx prisma migrate dev --name init
 Open **yet another terminal tab** and run:
 
 ```bash
+npx prisma generate
+npx prisma migrate dev --name init
 npm run seed
 ```
 
@@ -92,7 +102,8 @@ npm run seed
 
 ### 6️⃣ Get started!
 
-You can now use the application!
+You can now use the application!  
+👉 [Open in browser](http://localhost:3000)
 
 ## 🧪 Tech Stack
 

@@ -52,15 +52,15 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
           <div className="flex justify-center mb-4">
             <CheckCircle className="h-16 w-16 text-green-500" />
           </div>
-          <h1 className="text-3xl font-bold text-green-600 mb-2">Purchase Successful!</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold text-green-600 mb-2">Purchase Successful!</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">
             Thank you for your purchase. Your ebooks are now available in your library.
           </p>
         </div>
 
-        <div className="bg-white border rounded-lg p-6 mb-6">
+        <div className="bg-white border rounded-lg p-4 sm:p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold">Order Summary</h2>
+            <h2 className="text-lg sm:text-xl font-semibold">Order Summary</h2>
             <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
               Completed
             </Badge>
@@ -72,18 +72,18 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
               const hasDiscount = book.discountedPrice !== null;
               
               return (
-                <div key={book.id} className="flex justify-between items-start py-3 border-b last:border-b-0">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-sm truncate pr-4">{book.title}</h3>
-                    <p className="text-xs text-muted-foreground mt-1">
+                <div key={book.id} className="flex justify-between items-start py-3 border-b last:border-b-0 gap-4">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-sm truncate">{book.title}</h3>
+                    <p className="text-xs text-muted-foreground mt-1 truncate">
                       by {book.author} • {book.category}
                     </p>
                   </div>
                   <div className="text-right flex-shrink-0">
                     {hasDiscount ? (
-                      <div>
+                      <div className="flex flex-col items-end">
                         <span className="text-sm font-semibold">${price.toFixed(2)}</span>
-                        <span className="text-xs text-muted-foreground line-through ml-2">
+                        <span className="text-xs text-muted-foreground line-through">
                           ${book.price.toFixed(2)}
                         </span>
                       </div>
@@ -106,7 +106,7 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
 
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
           <div className="flex items-start space-x-3">
-            <div>
+            <div className="min-w-0 flex-1">
               <h3 className="font-semibold text-blue-800 mb-1">Digital Delivery</h3>
               <p className="text-sm text-blue-700">
                 Your ebooks are now available in your library. 
@@ -116,16 +116,16 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
-          <Button asChild className="flex-1" size="lg">
-            <Link href="/library">
+        <div className="flex flex-col gap-3">
+          <Button asChild className="w-full" size="lg">
+            <Link href="/library" className="flex items-center justify-center">
               <Library className="h-4 w-4 mr-2" />
               View Library
             </Link>
           </Button>
           
-          <Button asChild variant="outline" className="flex-1" size="lg">
-            <Link href="/books">
+          <Button asChild variant="outline" className="w-full" size="lg">
+            <Link href="/books" className="flex items-center justify-center">
               <ShoppingBag className="h-4 w-4 mr-2" />
               Browse More Books
             </Link>
@@ -133,7 +133,7 @@ export default async function CheckoutSuccessPage({ searchParams }: CheckoutSucc
         </div>
 
         <div className="text-center mt-6">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground px-4">
             Need help? Contact our support team or check your purchase history in your account.
           </p>
         </div>

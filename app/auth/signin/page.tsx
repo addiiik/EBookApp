@@ -3,16 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
-import { auth, signIn } from "@/auth"
+import { signIn } from "@/auth"
 import { redirect } from 'next/navigation';
 
-export default async function LoginPage({ searchParams }: { searchParams: { redirect?: string } }) {
-  const session = await auth();
-  
-  if (session?.user?.id) {
-    redirect(`/`);
-  }
-    
+export default async function LoginPage({ searchParams }: { searchParams: { redirect?: string } }) {    
   const searchparams = await searchParams;
   const redirectPath = searchparams?.redirect || "/";
   
@@ -26,12 +20,13 @@ export default async function LoginPage({ searchParams }: { searchParams: { redi
       await signIn("credentials", {
         email,
         password,
-        redirectTo: redirectPath,
+        redirect: false
       });
 
     } catch (error) {
       redirect('/auth/signin')
     }
+    redirect(redirectPath);
   }
 
   return (

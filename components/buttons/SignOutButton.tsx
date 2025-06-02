@@ -3,13 +3,15 @@
 import { signOut } from 'next-auth/react';
 import { Button } from '@/components/ui/button';
 import { LogOut } from 'lucide-react';
+import { redirect } from 'next/navigation';
 
 export default function SignOutButton() {
   const handleSignOut = async () => {
     await signOut({ 
       callbackUrl: '/',
-      redirect: true 
+      redirect: false 
     });
+    redirect('/');
   };
 
   return (
