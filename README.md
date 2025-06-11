@@ -1,4 +1,4 @@
-# 💪 E-Book Store
+# 📚 E-Book Store
 
 A digital store and library for your academic textbooks.
 
