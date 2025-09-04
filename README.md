@@ -107,9 +107,14 @@ You can now use the application!
 
 ## 🧪 Tech Stack
 
-- **Full Stack**: Next.js, TypeScript
-- **Database**: Postgres (via Docker)
-- **Authentication**: JWT
+| Category         | Technology |
+|------------------|------------|
+| **Language**     | [![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/docs/) |
+| **Frontend**     | [![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)](https://nextjs.org/) |
+| **Backend**      | [![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)](https://nextjs.org/) |
+| **Database**     | [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169e1?logo=postgresql&logoColor=white)](https://www.postgresql.org/) |
+| **Authentication** | [![JWT](https://img.shields.io/badge/JWT-000?logo=jsonwebtokens&logoColor=white)](https://www.jwt.io/introduction#what-is-json-web-token) |
+| **Containerization** | [![Docker](https://img.shields.io/badge/Docker-2496ed?logo=docker&logoColor=white)](https://docs.docker.com) |
 
 ---
 
