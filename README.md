@@ -33,6 +33,7 @@ A digital store and reader for academic textbooks.
 | **Database**     | [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169e1?logo=postgresql&logoColor=white)](https://www.postgresql.org/) |
 | **Authentication** | [![JWT](https://img.shields.io/badge/JWT-000?logo=jsonwebtokens&logoColor=white)](https://www.jwt.io/introduction#what-is-json-web-token) |
 | **Containerization** | [![Docker](https://img.shields.io/badge/Docker-2496ed?logo=docker&logoColor=white)](https://docs.docker.com) |
+| **Tests** | [![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev) |
 
 ---
 
