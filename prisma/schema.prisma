@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id              String      @id @default(uuid())
+  title           String
+  author          String
+  description     String
+  pages           Int
+  price           Float
+  discountedPrice Float?
+  rating          Float
+  category        String
+  createdAt       DateTime    @default(now())
+
+  cartItems       CartItem[]
+  wishlistItems   WishlistItem[]
+  purchasedBy     PurchasedBook[]
+  readingProgress ReadingProgress[]
+}
+
+model User {
+  id              String            @id @default(uuid())
+  email           String            @unique
+  password        String
+  name            String?
+  createdAt       DateTime          @default(now())
+
+  cartItems       CartItem[]
+  wishlistItems   WishlistItem[]
+  purchasedBooks  PurchasedBook[]
+  readingProgress ReadingProgress[]
+}
+
+model CartItem {
+  id        String     @id @default(uuid())
+  user      User       @relation(fields: [userId], references: [id])
+  userId    String
+
+  book      Book       @relation(fields: [bookId], references: [id])
+  bookId    String
+
+  @@unique([userId, bookId])
+}
+
+model WishlistItem {
+  id       String     @id @default(uuid())
+  user     User       @relation(fields: [userId], references: [id])
+  userId   String     
+
+  book     Book       @relation(fields: [bookId], references: [id])
+  bookId   String     
+
+  @@unique([userId, bookId])
+}
+
+model PurchasedBook {
+  id            String     @id @default(uuid())
+  user          User       @relation(fields: [userId], references: [id])
+  userId        String
+
+  book          Book       @relation(fields: [bookId], references: [id])
+  bookId        String
+
+  purchasedAt   DateTime   @default(now())
+
+  @@unique([userId, bookId])
+}
+
+model CheckoutSession {
+  id          String   @id @default(uuid())
+  userId      String
+  createdAt   DateTime @default(now())
+  validUntil  DateTime
+}
+
+model ReadingProgress {
+  id         String   @id @default(uuid())
+  userId     String
+  bookId     String
+  page       Int      @default(1)
+  finished   Boolean  @default(false)
+  updatedAt  DateTime @updatedAt
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id])
+  book       Book     @relation(fields: [bookId], references: [id])
+
+  @@unique([userId, bookId])
+}
